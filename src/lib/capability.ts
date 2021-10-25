@@ -1,4 +1,4 @@
-import { writable } from "svelte/store";
+// import { writable } from "svelte/store";
 
 export interface CapabilityParams {
   current: number;
@@ -13,7 +13,7 @@ const initial: CapabilityParams = {
   duration: 36,
 };
 
-export const params = writable(initial, (set) => {
-  console.log("Subscribed");
-  return () => console.log("unsubscribed");
-});
+// export const params = writable(initial, (set) => {
+//   console.log("Subscribed");
+//   return () => console.log("unsubscribed");
+// });
