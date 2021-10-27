@@ -18,9 +18,23 @@
 			duration: 36,
 		},
 	]);
+	let assess = new CapabilityData("Assess Automation", [
+		{
+			name: "Feature",
+			current: 5,
+			target: 100,
+			start: 20,
+			duration: 24,
+		},
+		{
+			name: "Rollout",
+			current: 0,
+			target: 100,
+			start: 20,
+			duration: 36,
+		},
+	]);
 </script>
 
-<p class="text-5xl text-blue-700 text-center">Welcome to Svelte and Tailwind</p>
-<h2>{receive.toString()}</h2>
 <Capability bind:capability={receive} />
-<!-- <Capability bind:local={local2} /> -->
+<Capability bind:capability={assess} />

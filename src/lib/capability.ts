@@ -7,17 +7,21 @@ export interface ICurve {
   duration: number;
 };
 
-export interface ICapability {
-  name: string;
-  curves: ICurve[];
-}
-
 export class CurveData implements ICurve {
   constructor(public name: string, public current: number, public target: number, public start: number, public duration: number) { }
 }
 
-export class CapabilityData implements ICapability {
-  constructor(public name: string, public curves: ICurve[]) { };
+export class CapabilityData {
+  constructor(public name: string, public curves: ICurve[]) {
+    curves.forEach((c) => {
+      if (c.current > 1) {
+        c.current /= 100;
+      }
+      if (c.target > 1) {
+        c.target /= 100;
+      }
+    })
+  };
   toString(): string {
     console.log("Called toString");
     var str = `[${this.name}: `;
